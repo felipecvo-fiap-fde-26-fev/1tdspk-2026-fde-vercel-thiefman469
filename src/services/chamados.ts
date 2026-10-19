@@ -1,6 +1,8 @@
 import type { Chamado, NovoChamadoInput, Status } from "../types/chamado";
 
-export const API = "https://fixit-api-vc7a.onrender.com/tickets";
+const baseURL = import.meta.env.VITE_API_URL;
+
+export const API = '${baseURL}/tickets';
 
 // MISSÃO 1: substitua o retorno temporário por GET, resposta.ok e resposta.json().
 export async function listarChamados(): Promise<Chamado[]> {
